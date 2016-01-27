@@ -1,25 +1,30 @@
-$(function() {
+$(document).ready(function(){
 
-  // $(".numbers-row").append('<div class="inc button">+</div><div class="dec button">-</div>');
+  var oldValue = $("input[name^='answer']").val();
 
-  $(".button").on("click", function() {
-
-    var $button = $(this);
-    var oldValue = $button.parent().find("input").val();
-
-    if ($button.text() == "+") {
-  	  var newVal = parseFloat(oldValue) + 1;
-  	} else {
-	   // Don't allow decrementing below zero
-      if (oldValue > 0) {
-        var newVal = parseFloat(oldValue) - 1;
-	    } else {
-        newVal = 0;
-      }
-	  }
-
-    $button.parent().find("input").val(newVal);
-
+  $(".number").on("click", function(event) {
+    var buttonNumber = this.value;
+    var newValue = Number(""+oldValue+buttonNumber);
+    $("input").val(newValue);
+    oldValue=newValue;
+    event.preventDefault();
   });
+
+  $(".decimal").on("click", function(event) {
+    var buttonNumber = this.value;
+    var newValue = Number(""+oldValue+buttonNumber+"4");
+    console.log(newValue);
+
+    $("input").val(newValue);
+    oldValue=newValue;
+    event.preventDefault();
+
+    // var precision = oldValue.length;
+    // oldValue=oldValue.precision(precision+1);
+    //
+    // var n = num.toFixed(2)
+    // event.preventDefault();
+  });
+
 
 });

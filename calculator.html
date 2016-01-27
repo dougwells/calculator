@@ -6,56 +6,66 @@
 	<meta charset="UTF-8">
 
   <title>Calculator</title>
-  <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-  <script src="js/calulator.js"></script>
+  <script src="js/calculator.js"></script>
 
 </head>
 
 <body>
 	<div class="container">
-		<form method="get" action="">
-			<div class="row">
-				<input type="number" value="0">
-				</div>
-			<div class="row">
-				<div class="col-md-4">
-					<button class="number">1</button>
-					<button class="number">2</button>
-					<button class="number">3</button>
+		<div class="row">
+			<div class="col-md-4">
+				<form id="calculator" method="get" action="">
+						<input type="number" name="answer" value=0>
+				</form>
+			</div>
+		</div>
 
+			<div class="row">
+				<div class="col-md-4">
+					<button form="calculator" class="btn-sm btn-default number" value=1>1</button>
+					<button form="calculator" class="btn-sm btn-default number" value=2>2</button>
+					<button form="calculator" class="btn-sm btn-default number" value=3>3</button>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<button class="number">4</button>
-					<button class="number">5</button>
-					<button class="number">6</button>
+					<button form="calculator" class="btn-sm btn-default number" value=4>4</button>
+					<button form="calculator" class="btn-sm btn-default number" value=5>5</button>
+					<button form="calculator" class="btn-sm btn-default number" value=6>6</button>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<button class="number">7</button>
-					<button class="number">8</button>
-					<button class="number">9</button>
+					<button form="calculator" class="btn-sm btn-default number" value=7>7</button>
+					<button form="calculator" class="btn-sm btn-default number" value=8>8</button>
+					<button form="calculator" class="btn-sm btn-default number" value=9>9</button>
 				</div>
 			</div>
-		</form>
-	</div>
+			<div class="row">
+				<div class="col-md-4">
+					<button form="calculator" class="btn-sm btn-default number" value="0">0</button>
+					<button form="calculator" class="btn-sm btn-default decimal" value=".">.</button>
+					<button form="calculator" class="btn-sm btn-danger clear" value="Clear">C</button>
+				</div>
+			</div>
 
-	<div id="page-wrap">
-		<h1>Input Number Incrementer</h1>
-    <form method="get" action="">
-      <div class="numbers-row">
-        <label for="name">Answer</label>
-        <input type="number" value="3">
-        <div class="inc button">+</div>
-        <div class="dec button">-</div>
-        <div class="nine button">9</div>
-        <div class="eight button">8</div>
-      </div>
-    </form>
+			<div class="row">
+				<div class="col-md-4">
+					<button form="calculator" class="btn-sm btn-default decimal" value=".">.</button>
+					<button form="calculator" class="btn-sm btn-default multiply" value="*">*</button>
+					<button form="calculator" class="btn-sm btn-default add" value="+">+</button>
+				</div>
+			</div>
+
+
+			<button form="calculator" class="btn-sm btn-default multiply" value="*">*</button>
+			<button form="calculator" class="btn-sm btn-default add" value="+">+</button>
+
+
 	</div>
 
 
