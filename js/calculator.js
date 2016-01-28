@@ -38,9 +38,6 @@ $(document).ready(function(){
     console.log(this.value);
     mathButtonPushed=true;
     $("input").val(display);
-    // console.log(arr);
-    // console.log(display);
-    // console.log(mathButtonPushed)
     event.preventDefault();
   });
 
