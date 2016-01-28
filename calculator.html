@@ -7,9 +7,12 @@
 
   <title>Calculator</title>
 	<link rel="stylesheet" href="css/main.css">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"> -->
+  <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script> -->
+	<script src="js/jquery-1.12.0.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script> -->
   <script src="js/calculator.js"></script>
 
 </head>
@@ -19,7 +22,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<form id="calculator" method="get" action="">
-						<input type="number" name="answer" value=0>
+						<input type="text" name="display" value=42.55>
 				</form>
 			</div>
 		</div>
@@ -49,21 +52,23 @@
 				<div class="col-md-4">
 					<button form="calculator" class="btn-sm btn-default number" value="0">0</button>
 					<button form="calculator" class="btn-sm btn-default decimal" value=".">.</button>
-					<button form="calculator" class="btn-sm btn-danger clear" value="Clear">C</button>
+					<button form="calculator" class="btn-sm btn-danger clear" value="0">C</button>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-md-4">
-					<button form="calculator" class="btn-sm btn-default decimal" value=".">.</button>
-					<button form="calculator" class="btn-sm btn-default multiply" value="*">*</button>
-					<button form="calculator" class="btn-sm btn-default add" value="+">+</button>
+					<button form="calculator" class="btn-sm btn-default changeSign" value="+/-">+/-</button>
+					<button form="calculator" class="btn-sm btn-default minus mathOp" value="-">-</button>
+					<button form="calculator" class="btn-sm btn-default add mathOp" value="+">+</button>
 				</div>
 			</div>
 
 
-			<button form="calculator" class="btn-sm btn-default multiply" value="*">*</button>
-			<button form="calculator" class="btn-sm btn-default add" value="+">+</button>
+			<button form="calculator" class="btn-sm btn-default multiply mathOp" value="*">*</button>
+			<button form="calculator" class="btn-sm btn-default divide mathOp" value="/">/</button>
+			<button form="calculator" class="btn-sm btn-default equal" value="=">  =  </button>
+
 
 
 	</div>

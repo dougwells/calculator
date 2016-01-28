@@ -1,29 +1,84 @@
 $(document).ready(function(){
 
-  var oldValue = $("input[name^='answer']").val();
+  var display = $("input[name^='display']").val();
+  var arr =[];
+  var mathButtonPushed = false;
 
   $(".number").on("click", function(event) {
-    var buttonNumber = this.value;
-    var newValue = Number(""+oldValue+buttonNumber);
-    $("input").val(newValue);
-    oldValue=newValue;
+    display = Number(""+display+this.value);
+    if (mathButtonPushed){
+      display = this.value;
+      mathButtonPushed = false;
+    };
+    $("input").val(display);
     event.preventDefault();
   });
 
   $(".decimal").on("click", function(event) {
-    var buttonNumber = this.value;
-    var newValue = Number(""+oldValue+buttonNumber+"4");
-    console.log(newValue);
-
-    $("input").val(newValue);
-    oldValue=newValue;
+    display = (""+display+".");
+    $("input").val(display);
     event.preventDefault();
+  });
 
-    // var precision = oldValue.length;
-    // oldValue=oldValue.precision(precision+1);
-    //
-    // var n = num.toFixed(2)
-    // event.preventDefault();
+  $(".clear").on("click", function(event) {
+    display=0;
+    $("input").val(display);
+    event.preventDefault();
+  });
+
+  $(".changeSign").on("click", function(event) {
+    display = -display;
+    $("input").val(display);
+    event.preventDefault();
+  });
+
+  $(".add").on("click", function(event) {
+    arr.push(Number(display));
+    arr.push("+");
+    mathButtonPushed=true;
+    $("input").val(display);
+    // console.log(arr);
+    // console.log(display);
+    // console.log(mathButtonPushed)
+    event.preventDefault();
+  });
+
+  $(".minus").on("click", function(event) {
+    arr.push(Number(display));
+    arr.push("-");
+    mathButtonPushed=true;
+    $("input").val(display);
+    event.preventDefault();
+  });
+
+  $(".multiply").on("click", function(event) {
+    arr.push(Number(display));
+    arr.push("*");
+    mathButtonPushed=true;
+    $("input").val(display);
+    event.preventDefault();
+  });
+
+  $(".divide").on("click", function(event) {
+    arr.push(Number(display));
+    arr.push("/");
+    mathButtonPushed=true;
+    $("input").val(display);
+    event.preventDefault();
+  });
+
+
+
+  $(".equal").on("click", function(event) {
+    (arr[1]=="+" ? display=arr[0]+Number(display) : display = display);
+    (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
+    (arr[1]=="*" ? display=arr[0]*Number(display) : display = display);
+    (arr[1]=="/" ? display=arr[0]/Number(display) : display = display);
+
+
+    $("input").val(display);
+    arr = [];
+    event.preventDefault();
   });
 
 

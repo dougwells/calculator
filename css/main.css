@@ -31,10 +31,10 @@ label {
 }
 input[type=text] {
   float: left;
-  width: 40px;
+  width: 100px;
   font: bold 20px Helvetica, sans-serif;
   padding: 3px 0 0 0;
-  text-align: center;
+  text-align: right;
 }
 input[type=number] {
   float: left;
