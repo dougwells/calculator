@@ -32,9 +32,10 @@ $(document).ready(function(){
     event.preventDefault();
   });
 
-  $(".add").on("click", function(event) {
+  $(".mathOp").on("click", function(event) {
     arr.push(Number(display));
-    arr.push("+");
+    arr.push(this.value);
+    console.log(this.value);
     mathButtonPushed=true;
     $("input").val(display);
     // console.log(arr);
@@ -43,38 +44,11 @@ $(document).ready(function(){
     event.preventDefault();
   });
 
-  $(".minus").on("click", function(event) {
-    arr.push(Number(display));
-    arr.push("-");
-    mathButtonPushed=true;
-    $("input").val(display);
-    event.preventDefault();
-  });
-
-  $(".multiply").on("click", function(event) {
-    arr.push(Number(display));
-    arr.push("*");
-    mathButtonPushed=true;
-    $("input").val(display);
-    event.preventDefault();
-  });
-
-  $(".divide").on("click", function(event) {
-    arr.push(Number(display));
-    arr.push("/");
-    mathButtonPushed=true;
-    $("input").val(display);
-    event.preventDefault();
-  });
-
-
-
   $(".equal").on("click", function(event) {
     (arr[1]=="+" ? display=arr[0]+Number(display) : display = display);
     (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
     (arr[1]=="*" ? display=arr[0]*Number(display) : display = display);
     (arr[1]=="/" ? display=arr[0]/Number(display) : display = display);
-
 
     $("input").val(display);
     arr = [];
