@@ -3,6 +3,13 @@ $(document).ready(function(){
   var display = $(".display").text();
   var arr =[];
   var mathButtonPushed = false;
+  var i = 0; //image array incrementor
+  var imageURL = [
+    ['url("https://dl.dropboxusercontent.com/s/2c9cmd3zpf9ot7i/triathelete.jpg")', "col-md-offset-2"],
+    ['url("https://dl.dropboxusercontent.com/s/4pccyow004a4fz8/pushupGirlOneHand.jpg")', "col-md-offset-1"],
+    ['url("https://dl.dropboxusercontent.com/s/fzmqo87d9m9x4el/sfo.jpg")', "col-md-offset-6"],
+    ['url("https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg")', "col-md-offset-1"]
+  ];
 
   $(".number").on("click", function(event) {
     display = Number(""+display+$(this).text());
@@ -33,9 +40,12 @@ $(document).ready(function(){
   });
 
   $(".pi").on("click", function(event) {
-    display = Math.PI;
-    $(".display").text(display);
-    event.preventDefault();
+    (i>imageURL.length ? i=0 : i=i);
+    $(".display").text("Surprise ...!");
+    $("body").css({"background-image": imageURL[i][0]});
+    setTimeout(function () { $(".display").text(Math.PI)}, 2000);
+    i++;
+
   });
 
   $(".mathOp").on("click", function(event) {
