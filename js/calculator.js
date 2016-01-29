@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  var display = $("input[name^='display']").val();
+  var display = $(".display").text();
   var arr =[];
   var mathButtonPushed = false;
 
@@ -10,25 +10,31 @@ $(document).ready(function(){
       display = $(this).text();
       mathButtonPushed = false;
     };
-    $("input").val(display);
+    $(".display").text(display);
     event.preventDefault();
   });
 
   $(".decimal").on("click", function(event) {
     display = (""+display+".");
-    $("input").val(display);
+    $(".display").text(display);
     event.preventDefault();
   });
 
   $(".clear").on("click", function(event) {
     display=0;
-    $("input").val(display);
+    $(".display").text(display);
     event.preventDefault();
   });
 
   $(".changeSign").on("click", function(event) {
     display = -display;
-    $("input").val(display);
+    $(".display").text(display);
+    event.preventDefault();
+  });
+
+  $(".pi").on("click", function(event) {
+    display = Math.PI;
+    $(".display").text(display);
     event.preventDefault();
   });
 
@@ -37,7 +43,7 @@ $(document).ready(function(){
     arr.push($(this).text());
     console.log($(this).text());
     mathButtonPushed=true;
-    $("input").val(display);
+    $(".display").text(display);
     event.preventDefault();
   });
 
@@ -46,8 +52,10 @@ $(document).ready(function(){
     (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
     (arr[1]=="*" ? display=arr[0]*Number(display) : display = display);
     (arr[1]=="÷" ? display=arr[0]/Number(display) : display = display);
+    // (arr[1]=="π" ? display=Math.PI : display = display);
 
-    $("input").val(display);
+
+    $(".display").text(display);
     arr = [];
     event.preventDefault();
   });

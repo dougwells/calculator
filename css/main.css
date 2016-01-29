@@ -8,9 +8,13 @@ body{
 }
 
 .display {
-  margin: 50px 0 0 0;
-  width: 100%;
+  margin: 50px 5px 0 5px;
+  width: 280px;
   height: 60px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid #fff;
   border-radius: 5px;
   font: bold 45px Arial, Helvetica, sans-serif;
   color: #333;
@@ -37,8 +41,21 @@ body{
     transition: all 0.3s ease 0s;
 }
 
-.calc-btn .double-wide {
-  width: 130px;
+.double-wide {
+  display: inline-block;
+  color: #fff;
+  font-family: Sans-serif;
+  font-size: 20px;
+  height: 60px;
+  width: 135px;
+  padding: 20px 0px;
+  line-height: 20px;
+  margin: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
 }
 
 .calc-btn:hover,

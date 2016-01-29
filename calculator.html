@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- <div>π</div> -->
 <html>
 
 <head>
@@ -23,12 +24,19 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<form id="calculator" method="get" action="">
-							<input type="text" class="display" name="display" value=42.55>
-					</form>
+					<div class="display">9.42</div>
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col-md-4">
+					<div class="calc-btn pi">π</div>
+
+					<div class="calc-btn changeSign">+/-</div>
+					<div class="calc-btn mathOp">÷</div>
+					<div class="calc-btn mathOp">*</div>
+				</div>
+			</div>
 
 			<div class="row">
 				<div class="col-md-4">
@@ -53,54 +61,17 @@
 					<div class="calc-btn number">1</div>
 					<div class="calc-btn number">2</div>
 					<div class="calc-btn number">3</div>
-					<div class="calc-btn equal">=</div>
+					<div class="calc-btn clear">C</div>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="calc-btn number double-wide">0</div>
+					<div class="double-wide number">0</div>
 					<div class="calc-btn decimal">.</div>
 					<div class="calc-btn equal">=</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-md-4">
-					<button form="calculator" class="btn-sm btn-default number" value=4>4</button>
-					<button form="calculator" class="btn-sm btn-default number" value=5>5</button>
-					<button form="calculator" class="btn-sm btn-default number" value=6>6</button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<button form="calculator" class="btn-sm btn-default number" value=7>7</button>
-					<button form="calculator" class="btn-sm btn-default number" value=8>8</button>
-					<button form="calculator" class="btn-sm btn-default number" value=9>9</button>
-
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<button form="calculator" class="btn-sm btn-default number" value="0">0</button>
-					<button form="calculator" class="btn-sm btn-default decimal" value=".">.</button>
-					<button form="calculator" class="btn-sm btn-danger clear" value="0">C</button>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4">
-					<button form="calculator" class="btn-sm btn-default changeSign" value="+/-">+/-</button>
-					<button form="calculator" class="btn-sm btn-default minus mathOp" value="-">-</button>
-					<button form="calculator" class="btn-sm btn-default add mathOp" value="+">+</button>
-					<div class="calc-btn mathOp">÷</div>
-
-				</div>
-			</div>
-
-
-			<button form="calculator" class="btn-sm btn-default multiply mathOp" value="*">*</button>
-			<button form="calculator" class="btn-sm btn-default equal" value="=">  =  </button>
 
 		</div> <!-- col-md-offset-4 -->
 	</div> <!-- container -->
