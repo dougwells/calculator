@@ -50,7 +50,7 @@ $(document).ready(function(){
   $(".equal").on("click", function(event) {
     (arr[1]=="+" ? display=arr[0]+Number(display) : display = display);
     (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
-    (arr[1]=="*" ? display=arr[0]*Number(display) : display = display);
+    (arr[1]=="x" ? display=arr[0]*Number(display) : display = display);
     (arr[1]=="÷" ? display=arr[0]/Number(display) : display = display);
     // (arr[1]=="π" ? display=Math.PI : display = display);
 
