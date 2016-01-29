@@ -19,11 +19,12 @@
 
 <body>
 	<div class="container">
-		<div class = col-md-offset-4>
+		<div class = col-md-offset-2>
+
 			<div class="row">
 				<div class="col-md-4">
 					<form id="calculator" method="get" action="">
-							<input type="text" name="display" value=42.55>
+							<input type="text" class="display" name="display" value=42.55>
 					</form>
 				</div>
 			</div>
@@ -31,11 +32,39 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<button form="calculator" class="btn-sm btn-default number" value=1>1</button>
-					<button form="calculator" class="btn-sm btn-default number" value=2>2</button>
-					<button form="calculator" class="btn-sm btn-default number" value=3>3</button>
+					<div class="calc-btn number">7</div>
+					<div class="calc-btn number">8</div>
+					<div class="calc-btn number">9</div>
+					<div class="calc-btn mathOp">-</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="calc-btn number">4</div>
+					<div class="calc-btn number">5</div>
+					<div class="calc-btn number">6</div>
+					<div class="calc-btn mathOp">+</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="calc-btn number">1</div>
+					<div class="calc-btn number">2</div>
+					<div class="calc-btn number">3</div>
+					<div class="calc-btn equal">=</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="calc-btn number double-wide">0</div>
+					<div class="calc-btn decimal">.</div>
+					<div class="calc-btn equal">=</div>
+				</div>
+			</div>
+
 			<div class="row">
 				<div class="col-md-4">
 					<button form="calculator" class="btn-sm btn-default number" value=4>4</button>
@@ -48,6 +77,7 @@
 					<button form="calculator" class="btn-sm btn-default number" value=7>7</button>
 					<button form="calculator" class="btn-sm btn-default number" value=8>8</button>
 					<button form="calculator" class="btn-sm btn-default number" value=9>9</button>
+
 				</div>
 			</div>
 			<div class="row">
@@ -63,12 +93,13 @@
 					<button form="calculator" class="btn-sm btn-default changeSign" value="+/-">+/-</button>
 					<button form="calculator" class="btn-sm btn-default minus mathOp" value="-">-</button>
 					<button form="calculator" class="btn-sm btn-default add mathOp" value="+">+</button>
+					<div class="calc-btn mathOp">÷</div>
+
 				</div>
 			</div>
 
 
 			<button form="calculator" class="btn-sm btn-default multiply mathOp" value="*">*</button>
-			<button form="calculator" class="btn-sm btn-default divide mathOp" value="/">/</button>
 			<button form="calculator" class="btn-sm btn-default equal" value="=">  =  </button>
 
 		</div> <!-- col-md-offset-4 -->

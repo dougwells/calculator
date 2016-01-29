@@ -5,9 +5,9 @@ $(document).ready(function(){
   var mathButtonPushed = false;
 
   $(".number").on("click", function(event) {
-    display = Number(""+display+this.value);
+    display = Number(""+display+$(this).text());
     if (mathButtonPushed){
-      display = this.value;
+      display = $(this).text();
       mathButtonPushed = false;
     };
     $("input").val(display);
@@ -34,8 +34,8 @@ $(document).ready(function(){
 
   $(".mathOp").on("click", function(event) {
     arr.push(Number(display));
-    arr.push(this.value);
-    console.log(this.value);
+    arr.push($(this).text());
+    console.log($(this).text());
     mathButtonPushed=true;
     $("input").val(display);
     event.preventDefault();
@@ -45,7 +45,7 @@ $(document).ready(function(){
     (arr[1]=="+" ? display=arr[0]+Number(display) : display = display);
     (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
     (arr[1]=="*" ? display=arr[0]*Number(display) : display = display);
-    (arr[1]=="/" ? display=arr[0]/Number(display) : display = display);
+    (arr[1]=="÷" ? display=arr[0]/Number(display) : display = display);
 
     $("input").val(display);
     arr = [];
