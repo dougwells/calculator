@@ -11,33 +11,48 @@ $(document).ready(function(){
     'url("https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg")'
   ];
 
-// Controls Display.  Converted from String to a Number at this point
+// When a number button is pushed.  mathButtonPushed lets calculator know to
+// start a "new" number vs adding the digit to the end of the number currently displayed
+
   $(".number").on("click", function(event) {
-    display = Number(""+display+$(this).text());
     if (mathButtonPushed){
       display = $(this).text();
       mathButtonPushed = false;
-    };
+    } else {
+      display = (""+display+$(this).text());
+    }
+    (isNaN(Number(display)) ? display="Error" : display=Number(display));
+    console.log (display);
+    console.log(display.type);
     $(".display").text(display);
   });
 
-//When you hit the decimal button
+//When you hit the decimal button.  Only complicated part is preventing
+// double decimal points in one number (checked for in "else" statement)
   $(".decimal").on("click", function(event) {
-    display = (""+display+".");
+    if (mathButtonPushed){
+      display = $(this).text();
+      mathButtonPushed = false;
+    } else {
+      display = (""+display+".");
+      (isNaN(Number(display)) ? display="Error" : display=display);
+    }
     $(".display").text(display);
   });
 
   $(".clear").on("click", function(event) {
     display=0;
     $(".display").text(display);
+    arr = [];
   });
 
   $(".changeSign").on("click", function(event) {
-    display = -display;
+    display = Number(-display);
+    (isNaN(display) ? display="Error" : display=display);
     $(".display").text(display);
   });
 
-// Would you like some pi?
+// Would you like some Easter PI?
   $(".pi").on("click", function(event) {
     (i<imageURL.length ? i=i : i=0);
     $(".display").text("Surprise ...!");
@@ -49,12 +64,27 @@ $(document).ready(function(){
   });
 
 //Handles math after + - X etc hit (this took some thinking ...)
+//Used array so I could come back later and add Reverse Polish Notation (RPN).
   $(".mathOp").on("click", function(event) {
+    console.log("before button push "+arr);
     arr.push(Number(display));
     arr.push($(this).text());
-    console.log($(this).text());
-    mathButtonPushed=true;
+    console.log("after button push & pre-loop " +arr);
+    if (arr.length>2) {
+      (arr[1]=="+" ? display=arr[0]+Number(display) : display = display);
+      (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
+      (arr[1]=="x" ? display=arr[0]*Number(display) : display = display);
+      (arr[1]=="÷" ? display=arr[0]/Number(display) : display = display);
+      arr = [];
+      arr.shift();
+      arr.push(Number(display));
+      arr.push($(this).text());
+    }
+    (isNaN(display) ? display="Error" : display=display);
     $(".display").text(display);
+    mathButtonPushed=true;
+    console.log("after loop " +arr);
+
   });
 
 //Pretty efficient way to handle different math operations.
@@ -63,6 +93,7 @@ $(document).ready(function(){
     (arr[1]=="-" ? display=arr[0]-Number(display) : display = display);
     (arr[1]=="x" ? display=arr[0]*Number(display) : display = display);
     (arr[1]=="÷" ? display=arr[0]/Number(display) : display = display);
+    (isNaN(display) ? display="Error" : display=display);
     $(".display").text(display);
     arr = [];
   });
