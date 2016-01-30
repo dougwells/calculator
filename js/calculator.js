@@ -5,10 +5,10 @@ $(document).ready(function(){
   var mathButtonPushed = false;
   var i = 0; //image array incrementor
   var imageURL = [
-    'url("https://dl.dropboxusercontent.com/s/b3bx1htfwao0lei/man_on_the_mountain.jpg")',
-    'url("https://dl.dropboxusercontent.com/s/ihldzg2u6l0drph/surferGirl.jpg")',
-    'url("https://dl.dropboxusercontent.com/s/s08q7kaodwztwkq/robotStart.jpg")',
-    'url("https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg")'
+    ['rgba(210,180,140, 0.6)','rgba(210,180,140, 0.3)','url("https://dl.dropboxusercontent.com/s/b3bx1htfwao0lei/man_on_the_mountain.jpg")'],
+    ['rgba(186,85,211, 0.6)','rgba(186,85,211, 0.3)','url("https://dl.dropboxusercontent.com/s/ihldzg2u6l0drph/surferGirl.jpg")'],
+    ['rgba(0,191,255, 0.4)','rgba(0,191,255, 0.2)','url("https://dl.dropboxusercontent.com/s/s08q7kaodwztwkq/robotStart.jpg")'],
+    ['rgba(234,104,17, 0.6)','rgba(234,104,17, 0.3)','url("https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg")']
   ];
 
 // When a number button is pushed.  mathButtonPushed lets calculator know to
@@ -22,8 +22,6 @@ $(document).ready(function(){
       display = (""+display+$(this).text());
     }
     (isNaN(Number(display)) ? display="Error" : display=Number(display));
-    console.log (display);
-    console.log(display.type);
     $(".display").text(display);
   });
 
@@ -56,10 +54,13 @@ $(document).ready(function(){
   $(".pi").on("click", function(event) {
     (i<imageURL.length ? i=i : i=0);
     $(".display").text("Surprise ...!");
-    $("body").css({"background-image": imageURL[i]});
-    setTimeout(function () { $(".display").text(Math.PI)}, 1000);
+    $("body").css({"background-image": imageURL[i][2]});
+    $(".orange-btn").css({"background-color":imageURL[i][0]});
+    setTimeout(function () {
+      display = Math.PI;
+      $(".display").text(Math.PI)
+    }, 1000);
     i++;
-    setTimeout(function(){display=Math.PI}, 1100);
 
   });
 
