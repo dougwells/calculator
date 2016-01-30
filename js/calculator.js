@@ -40,11 +40,12 @@ $(document).ready(function(){
   });
 
   $(".pi").on("click", function(event) {
-    (i>imageURL.length ? i=0 : i=i);
+    (i<imageURL.length ? i=i : i=0);
     $(".display").text("Surprise ...!");
     $("body").css({"background-image": imageURL[i][0]});
-    setTimeout(function () { $(".display").text(Math.PI)}, 2000);
+    setTimeout(function () { $(".display").text(Math.PI)}, 1000);
     i++;
+    setTimeout(function(){display=Math.PI}, 1100);
 
   });
 

@@ -7,8 +7,12 @@
 /*https://dl.dropboxusercontent.com/s/fzmqo87d9m9x4el/sfo.jpg*/
 
 body{
-  background-image: url('https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg');
+  background: url('https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg') no-repeat center center fixed;
+  width: 100%;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   overflow: hidden;
 }
 
