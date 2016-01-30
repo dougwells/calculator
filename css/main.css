@@ -1,10 +1,12 @@
 /*
     Calculator project
 */
-/*https://dl.dropboxusercontent.com/s/2c9cmd3zpf9ot7i/triathelete.jpg*/
-/*https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg*/
-/*https://dl.dropboxusercontent.com/s/4pccyow004a4fz8/pushupGirlOneHand.jpg*/
-/*https://dl.dropboxusercontent.com/s/fzmqo87d9m9x4el/sfo.jpg*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 body{
   background: url('https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg') no-repeat center center fixed;
@@ -16,8 +18,19 @@ body{
   overflow: hidden;
 }
 
+.positionRel {
+  position: relative;
+}
+
+.positionAb {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+
+}
+
 .display {
-  margin: 50px 5px 0 5px;
+  margin: 5px 5px 5px 5px;
   width: 280px;
   height: 60px;
   overflow: hidden;
