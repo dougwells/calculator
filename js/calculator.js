@@ -1,3 +1,7 @@
+// Doug Wells's Calculator project
+// See if you can find the "easter egg"
+// Finding it is as easy as PI
+
 $(document).ready(function(){
 
   var display = $(".display").text();
@@ -21,27 +25,29 @@ $(document).ready(function(){
     } else {
       display = (""+display+$(this).text());
     }
-    (isNaN(Number(display)) ? display="Error" : display=Number(display));
+    (isNaN(Number(display)) ? display="Error" : display=display);
     $(".display").text(display);
   });
 
 //When you hit the decimal button.  Only complicated part is preventing
 // double decimal points in one number (checked for in "else" statement)
   $(".decimal").on("click", function(event) {
-    if (mathButtonPushed){
-      display = $(this).text();
+    if (mathButtonPushed || display ==0){
+      display = "0.";
       mathButtonPushed = false;
+      $(".display").text(display);
     } else {
-      display = (""+display+".");
-      (isNaN(Number(display)) ? display="Error" : display=display);
-    }
+    (isNaN(Number(display)) ? display="Error" : display=display);
+    display = (""+display+$(this).text());
     $(".display").text(display);
+  }
   });
 
   $(".clear").on("click", function(event) {
     display=0;
     $(".display").text(display);
     arr = [];
+    mathButtonPushed=true;
   });
 
   $(".changeSign").on("click", function(event) {
